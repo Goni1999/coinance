@@ -982,8 +982,8 @@ body {
     }
     
     .contact-form-container {
-        grid-template-columns: 1.5fr 1fr;
-        gap: 48px;
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
     
     .footer-content {
@@ -1002,23 +1002,34 @@ body {
         padding: 0 20px;
     }
     
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    
     .nav-brand h3 {
         font-size: 24px;
+        font-weight: 800;
     }
     
     .nav-menu {
         display: none;
         position: fixed;
-        top: 80px;
+        top: 0;
         left: 0;
         right: 0;
-        background: rgba(15, 23, 42, 0.95);
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
         backdrop-filter: blur(20px);
-        padding: 32px 20px;
+        padding: 100px 20px 40px;
         flex-direction: column;
-        gap: 24px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        z-index: 999;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 32px;
+        z-index: 1000;
+        overflow-y: auto;
     }
     
     .nav-menu.active {
@@ -1026,28 +1037,60 @@ body {
     }
     
     .nav-menu a {
-        font-size: 18px;
-        padding: 12px 0;
+        font-size: 20px;
+        padding: 16px 24px;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        max-width: 280px;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
     }
     
     .nav-login {
-        margin-left: 0 !important;
-        margin-top: 16px !important;
-        text-align: center !important;
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+        color: white !important;
+        margin: 0 !important;
+        font-weight: 600 !important;
+        box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3) !important;
+    }
+    
+    .nav-login:hover {
+        background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 12px 35px rgba(37, 99, 235, 0.4) !important;
     }
     
     .mobile-menu-toggle {
         display: block;
-        padding: 8px;
+        padding: 12px;
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
+        border-radius: 12px;
         backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 18px;
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 1001;
+        position: relative;
+    }
+    
+    .mobile-menu-toggle:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
     }
     
     .hero-content {
-        padding-top: 80px;
+        padding-top: 100px;
     }
     
     .hero-title {
@@ -1199,13 +1242,22 @@ body {
     
     .contact-form {
         padding: 32px 24px;
+        border-radius: 20px;
     }
     
     .form-group input,
     .form-group select,
     .form-group textarea {
-        padding: 14px 16px;
+        padding: 16px 20px;
         font-size: 16px; /* Prevents zoom on iOS */
+        border-radius: 12px;
+    }
+    
+    .contact-form .btn {
+        width: 100%;
+        padding: 18px 32px;
+        font-size: 16px;
+        border-radius: 12px;
     }
     
     .contact-info h3 {
@@ -1244,22 +1296,34 @@ body {
         padding: 0 16px;
     }
     
+    .navbar {
+        padding: 12px 0;
+    }
+    
     .nav-brand h3 {
         font-size: 20px;
+        font-weight: 800;
     }
     
     .nav-menu {
-        top: 70px;
-        padding: 24px 16px;
+        padding: 80px 16px 32px;
+        gap: 28px;
+    }
+    
+    .nav-menu a {
+        font-size: 18px;
+        padding: 14px 20px;
+        max-width: 260px;
     }
     
     .mobile-menu-toggle {
-        font-size: 20px;
-        padding: 6px;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 10px;
     }
     
     .hero-content {
-        padding-top: 70px;
+        padding-top: 60px;
     }
     
     .hero-title {
