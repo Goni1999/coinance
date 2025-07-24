@@ -63,8 +63,12 @@ function toggleMobileMenu() {
     navMenu.classList.toggle('active');
     mobileMenuToggle.classList.toggle('active');
     
+    // Update hamburger icon
+    const isOpen = navMenu.classList.contains('active');
+    mobileMenuToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    
     // Prevent body scroll when menu is open
-    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    document.body.style.overflow = isOpen ? 'hidden' : '';
 }
 
 // Smooth Scrolling Function
@@ -463,66 +467,66 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-// Add CSS for mobile menu animation
+// Add CSS for mobile menu animation and scroll animations
 const mobileMenuStyles = `
-    @media (max-width: 768px) {
+    /* Mobile menu animations */
+    .nav-menu {
+        transition: all 0.3s ease;
+    }
+    
+    .nav-menu a {
+        transition: all 0.2s ease;
+    }
+    
+    .mobile-menu-toggle {
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-menu-toggle:hover {
+        background: rgba(255, 255, 255, 0.15) !important;
+    }
+    
+    .mobile-menu-toggle.active {
+        transform: rotate(180deg);
+    }
+    
+    /* Scroll animations */
+    .animate-in {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+    
+    .service-card, .feature-item, .testimonial-card, .benefit-item {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
+    
+    /* Responsive mobile menu visibility */
+    @media (min-width: 768px) {
         .nav-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            height: 100vh;
-            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: right 0.3s ease;
-            z-index: 999;
+            display: flex !important;
         }
         
-        .nav-menu.active {
-            right: 0;
+        .mobile-menu-toggle {
+            display: none !important;
+        }
+    }
+    
+    /* Enhanced mobile interactions */
+    @media (max-width: 767px) {
+        .nav-menu a:active {
+            background: rgba(255, 255, 255, 0.2) !important;
+            transform: scale(0.98);
         }
         
-        .nav-menu a {
-            font-size: 1.2em;
-            margin: 20px 0;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background 0.3s ease;
+        .btn:active {
+            transform: scale(0.98);
         }
         
-        .nav-menu a:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .nav-menu .nav-login {
-            background: rgba(255, 255, 255, 0.15) !important;
-            border: 1px solid rgba(255, 255, 255, 0.4) !important;
-            margin: 25px 0 !important;
-            padding: 12px 24px !important;
-            border-radius: 25px !important;
-            font-weight: 600 !important;
-        }
-        
-        .nav-menu .nav-login:hover {
-            background: rgba(255, 255, 255, 0.25) !important;
-            border-color: rgba(255, 255, 255, 0.6) !important;
-        }
-        
-        .mobile-menu-toggle.active {
-            transform: rotate(90deg);
-        }
-        
-        .animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .service-card, .feature-item, .testimonial-card, .benefit-item {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+        .contact-item:active,
+        .social-links a:active {
+            transform: scale(0.95);
         }
     }
 `;
