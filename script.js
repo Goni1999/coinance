@@ -67,8 +67,8 @@ function toggleMobileMenu() {
     const isOpen = navMenu.classList.contains('active');
     mobileMenuToggle.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     
-    // Prevent body scroll when menu is open
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    // For dropdown style, we don't need to prevent body scroll
+    // The dropdown is small and doesn't cover the whole screen
 }
 
 // Smooth Scrolling Function
