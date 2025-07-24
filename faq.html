@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | Coinance Call Center Services</title>
+    <meta name="description" content="Find answers to common questions about Coinance call center services, pricing, implementation, and support.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .faq-page {
+            padding: 100px 0 50px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+        .faq-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .faq-header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .faq-header h1 {
+            color: #0066cc;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        .faq-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .faq-category {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #0066cc;
+        }
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background: #0066cc;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.5em;
+        }
+        .category-title {
+            color: #0066cc;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 0;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .faq-question {
+            background: #f8f9fa;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+            font-weight: 500;
+            color: #333;
+        }
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+        .faq-question.active {
+            background: #0066cc;
+            color: white;
+        }
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .faq-answer.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+        .faq-answer p, .faq-answer li {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .faq-answer ul {
+            margin-left: 20px;
+        }
+        .toggle-icon {
+            transition: transform 0.3s ease;
+        }
+        .toggle-icon.active {
+            transform: rotate(180deg);
+        }
+        .nav-simple {
+            background: #0066cc;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .nav-simple .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-simple h3 {
+            color: white;
+            margin: 0;
+        }
+        .back-home {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .back-home:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .contact-cta {
+            background: #0066cc;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .contact-cta h3 {
+            margin-bottom: 15px;
+        }
+        .contact-cta p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        @media (max-width: 768px) {
+            .faq-categories {
+                grid-template-columns: 1fr;
+            }
+            .faq-header {
+                padding: 20px;
+            }
+            .faq-category {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-simple">
+        <div class="container">
+            <h3>Coinance</h3>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <a href="https://dashboard.coinance.co" target="_blank" style="color: white; text-decoration: none; padding: 6px 14px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease; font-size: 14px;">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="index.html" class="back-home">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="faq-page">
+        <div class="container">
+            <div class="faq-content">
+                <div class="faq-header">
+                    <h1>Frequently Asked Questions</h1>
+                    <p>Find answers to common questions about our call center services. Can't find what you're looking for? <a href="mailto:support@coinance.co" style="color: #0066cc;">Contact our support team</a>.</p>
+                </div>
+
+                <div class="faq-categories">
+                    <!-- General Services -->
+                    <div class="faq-category">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <h2 class="category-title">General Services</h2>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What call center services does Coinance offer?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Coinance provides comprehensive call center solutions including:</p>
+                                <ul>
+                                    <li>Inbound customer service and support</li>
+                                    <li>Outbound sales and lead generation</li>
+                                    <li>Live chat support</li>
+                                    <li>Technical support and troubleshooting</li>
+                                    <li>Order processing and customer retention</li>
+                                    <li>Multi-lingual support (English, Spanish, French, and more)</li>
+                                    <li>24/7 customer service availability</li>
+                                    <li>Social media customer support</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Do you provide 24/7 support?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! We offer 24/7/365 customer support services. Our global team operates across multiple time zones to ensure your customers always have access to professional support, regardless of when they need assistance.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What industries do you serve?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We serve businesses across various industries including:</p>
+                                <ul>
+                                    <li>E-commerce and retail</li>
+                                    <li>Healthcare and telehealth</li>
+                                    <li>Financial services</li>
+                                    <li>Technology and SaaS</li>
+                                    <li>Travel and hospitality</li>
+                                    <li>Real estate</li>
+                                    <li>Insurance</li>
+                                    <li>Education and training</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing & Plans -->
+                    <div class="faq-category">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <h2 class="category-title">Pricing & Plans</h2>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How is your pricing structured?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our pricing is flexible and based on your specific needs:</p>
+                                <ul>
+                                    <li><strong>Per-minute billing:</strong> Pay only for actual talk time</li>
+                                    <li><strong>Per-hour rates:</strong> Fixed hourly rates for dedicated agents</li>
+                                    <li><strong>Monthly retainer:</strong> Fixed monthly fee for guaranteed availability</li>
+                                    <li><strong>Per-interaction:</strong> Flat rate per email, chat, or call handled</li>
+                                    <li><strong>Custom packages:</strong> Tailored pricing for enterprise clients</li>
+                                </ul>
+                                <p>Contact us for a personalized quote based on your volume and requirements.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Is there a minimum commitment period?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We offer flexible terms to meet your business needs:</p>
+                                <ul>
+                                    <li><strong>Month-to-month:</strong> No long-term commitment required</li>
+                                    <li><strong>6-month contracts:</strong> Better rates with moderate commitment</li>
+                                    <li><strong>Annual contracts:</strong> Best pricing with yearly commitment</li>
+                                    <li><strong>Trial periods:</strong> 30-day trial available for new clients</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Are there setup fees or hidden costs?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We believe in transparent pricing. Our standard packages include:</p>
+                                <ul>
+                                    <li>No setup fees for basic services</li>
+                                    <li>Free agent training on your products/services</li>
+                                    <li>Standard reporting and analytics included</li>
+                                    <li>Basic system integrations at no extra cost</li>
+                                </ul>
+                                <p>Additional costs may apply for complex custom integrations or specialized services, which are clearly outlined in your quote.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Implementation -->
+                    <div class="faq-category">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h2 class="category-title">Implementation</h2>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How quickly can you start providing services?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Implementation timeline depends on service complexity:</p>
+                                <ul>
+                                    <li><strong>Basic services:</strong> 1-2 weeks for simple inbound/outbound calls</li>
+                                    <li><strong>Standard setup:</strong> 2-4 weeks for most comprehensive services</li>
+                                    <li><strong>Complex integrations:</strong> 4-8 weeks for enterprise-level customizations</li>
+                                    <li><strong>Emergency setup:</strong> 24-48 hours for urgent business needs</li>
+                                </ul>
+                                <p>We'll provide a detailed timeline during your consultation.</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What information do you need to get started?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>To begin setup, we typically need:</p>
+                                <ul>
+                                    <li>Product/service information and documentation</li>
+                                    <li>Common customer questions and responses (FAQ)</li>
+                                    <li>Escalation procedures and contact information</li>
+                                    <li>Preferred call scripts or guidelines</li>
+                                    <li>System access credentials (if integration required)</li>
+                                    <li>Branding guidelines and communication tone</li>
+                                    <li>Performance metrics and KPIs</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Do you integrate with existing business systems?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! We integrate with most popular business systems:</p>
+                                <ul>
+                                    <li><strong>CRM systems:</strong> Salesforce, HubSpot, Pipedrive, Zoho</li>
+                                    <li><strong>Help desk:</strong> Zendesk, Freshdesk, ServiceNow</li>
+                                    <li><strong>E-commerce:</strong> Shopify, WooCommerce, Magento</li>
+                                    <li><strong>Communication:</strong> Slack, Microsoft Teams, Discord</li>
+                                    <li><strong>Analytics:</strong> Google Analytics, custom dashboards</li>
+                                    <li><strong>Phone systems:</strong> Most VoIP and traditional systems</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quality & Security -->
+                    <div class="faq-category">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h2 class="category-title">Quality & Security</h2>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How do you ensure quality service?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our quality assurance program includes:</p>
+                                <ul>
+                                    <li>Comprehensive agent training and certification</li>
+                                    <li>Regular call monitoring and scoring</li>
+                                    <li>Real-time performance tracking</li>
+                                    <li>Monthly quality reviews and feedback sessions</li>
+                                    <li>Customer satisfaction surveys</li>
+                                    <li>Continuous improvement initiatives</li>
+                                    <li>Performance-based incentives for agents</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What security measures do you have in place?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We maintain enterprise-level security standards:</p>
+                                <ul>
+                                    <li>ISO 27001 certified information security management</li>
+                                    <li>End-to-end encryption for all communications</li>
+                                    <li>Regular security audits and penetration testing</li>
+                                    <li>GDPR and CCPA compliance</li>
+                                    <li>Secure data centers with 24/7 monitoring</li>
+                                    <li>Multi-factor authentication for system access</li>
+                                    <li>Regular security training for all staff</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Are calls recorded for quality purposes?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes, call recording is part of our quality assurance process:</p>
+                                <ul>
+                                    <li>All calls are recorded with proper disclosure</li>
+                                    <li>Recordings are used for training and quality improvement</li>
+                                    <li>Secure storage with limited access controls</li>
+                                    <li>Compliance with local recording consent laws</li>
+                                    <li>Recordings can be provided to clients upon request</li>
+                                    <li>Automatic deletion after retention period</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Support -->
+                    <div class="faq-category">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h2 class="category-title">Technical Support</h2>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What level of technical support can your agents provide?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Our technical support capabilities include:</p>
+                                <ul>
+                                    <li><strong>Level 1:</strong> Basic troubleshooting and account issues</li>
+                                    <li><strong>Level 2:</strong> Advanced technical problems and system issues</li>
+                                    <li><strong>Level 3:</strong> Complex technical escalations with specialist agents</li>
+                                    <li><strong>Product support:</strong> Detailed knowledge of your specific products</li>
+                                    <li><strong>Software assistance:</strong> Help with software installation and configuration</li>
+                                    <li><strong>API support:</strong> Technical assistance for developers</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Do you provide reporting and analytics?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Comprehensive reporting is included with all service plans:</p>
+                                <ul>
+                                    <li>Real-time dashboards and performance metrics</li>
+                                    <li>Daily, weekly, and monthly reports</li>
+                                    <li>Call volume and response time analytics</li>
+                                    <li>Customer satisfaction scores and trends</li>
+                                    <li>Agent performance metrics</li>
+                                    <li>Custom reports based on your KPIs</li>
+                                    <li>API access for integration with your systems</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What happens if there's a technical issue or outage?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We have robust contingency plans in place:</p>
+                                <ul>
+                                    <li>99.9% uptime guarantee with redundant systems</li>
+                                    <li>Automatic failover to backup data centers</li>
+                                    <li>24/7 technical support team</li>
+                                    <li>Real-time system monitoring and alerts</li>
+                                    <li>Immediate notification of any service issues</li>
+                                    <li>Service credits for any downtime per SLA</li>
+                                    <li>Regular disaster recovery testing</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account Management -->
+                    <div class="faq-category">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h2 class="category-title">Account Management</h2>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Will I have a dedicated account manager?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Yes! Every client receives dedicated support:</p>
+                                <ul>
+                                    <li>Primary account manager for day-to-day operations</li>
+                                    <li>Backup account manager for continuity</li>
+                                    <li>Regular check-ins and performance reviews</li>
+                                    <li>Direct contact information for urgent issues</li>
+                                    <li>Quarterly business reviews and optimization sessions</li>
+                                    <li>Escalation path to senior management when needed</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How can I monitor and manage my service?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>We provide multiple ways to stay informed and in control:</p>
+                                <ul>
+                                    <li>Online portal with real-time metrics</li>
+                                    <li>Mobile app for on-the-go monitoring</li>
+                                    <li>Automated email reports and alerts</li>
+                                    <li>Direct communication channels with agents</li>
+                                    <li>Call listening capabilities</li>
+                                    <li>Performance dashboards and analytics</li>
+                                    <li>Regular strategy sessions with your account manager</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Can I scale services up or down based on demand?</span>
+                                <i class="fas fa-chevron-down toggle-icon"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Absolutely! Our services are designed to be flexible:</p>
+                                <ul>
+                                    <li>Scale agent capacity up or down with 24-48 hours notice</li>
+                                    <li>Seasonal scaling for peak business periods</li>
+                                    <li>Overflow support during high-volume periods</li>
+                                    <li>Add or remove service channels as needed</li>
+                                    <li>Flexible pricing that adjusts with your usage</li>
+                                    <li>Emergency scaling for unexpected demand spikes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta">
+                    <h3>Still Have Questions?</h3>
+                    <p>Our team is here to help you find the perfect call center solution for your business.</p>
+                    <div>
+                        <a href="mailto:support@coinance.co" class="btn btn-secondary" style="margin-right: 15px;">
+                            <i class="fas fa-envelope"></i> Email Support
+                        </a>
+                        <a href="tel:+15551234567" class="btn btn-secondary">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div style="text-align: center; padding: 20px 0;">
+                <p>&copy; 2024 Coinance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.toggle-icon');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-question').forEach(question => {
+                if (question !== element) {
+                    question.classList.remove('active');
+                    question.nextElementSibling.classList.remove('active');
+                    question.querySelector('.toggle-icon').classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ item
+            element.classList.toggle('active');
+            answer.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Center | Coinance Call Center Services</title>
+    <meta name="description" content="Get help and support for Coinance call center services. Multiple support channels, resources, and expert assistance available 24/7.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .support-page {
+            padding: 100px 0 50px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+        }
+        .support-header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .support-header h1 {
+            color: #0066cc;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        .support-header p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .support-channels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .support-channel {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .support-channel:hover {
+            transform: translateY(-5px);
+        }
+        .channel-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0066cc, #004499);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2em;
+        }
+        .channel-title {
+            color: #0066cc;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .channel-description {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .channel-details {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .channel-details strong {
+            color: #0066cc;
+        }
+        .nav-simple {
+            background: #0066cc;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .nav-simple .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-simple h3 {
+            color: white;
+            margin: 0;
+        }
+        .back-home {
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .back-home:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .resources-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .resource-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            color: #333;
+        }
+        .resource-item:hover {
+            background: #e9ecef;
+            text-decoration: none;
+            color: #0066cc;
+        }
+        .resource-icon {
+            width: 40px;
+            height: 40px;
+            background: #0066cc;
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+        .emergency-support {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .emergency-support h3 {
+            margin-bottom: 15px;
+        }
+        .system-status {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .status-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #28a745;
+        }
+        .status-indicator.warning {
+            background: #ffc107;
+        }
+        .status-indicator.error {
+            background: #dc3545;
+        }
+        @media (max-width: 768px) {
+            .support-channels {
+                grid-template-columns: 1fr;
+            }
+            .support-header {
+                padding: 20px;
+            }
+            .support-channel {
+                padding: 20px;
+            }
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-simple">
+        <div class="container">
+            <h3>Coinance</h3>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <a href="https://dashboard.coinance.co" target="_blank" style="color: white; text-decoration: none; padding: 6px 14px; background: rgba(255, 255, 255, 0.1); border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.3); transition: all 0.3s ease; font-size: 14px;">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="index.html" class="back-home">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="support-page">
+        <div class="container">
+            <div class="support-header">
+                <h1>Support Center</h1>
+                <p>Get the help you need, when you need it. Our dedicated support team is available 24/7 to assist you with any questions or issues.</p>
+            </div>
+
+            <div class="emergency-support">
+                <h3><i class="fas fa-exclamation-triangle"></i> Emergency Support</h3>
+                <p>For urgent technical issues or service interruptions affecting your business operations:</p>
+                <div style="margin-top: 20px;">
+                    <a href="tel:+15551234567" class="btn btn-secondary" style="background: white; color: #dc3545; margin-right: 15px;">
+                        <i class="fas fa-phone"></i> Emergency Hotline: +1 (555) 123-4567
+                    </a>
+                    <a href="mailto:emergency@coinance.co" class="btn btn-secondary" style="background: white; color: #dc3545;">
+                        <i class="fas fa-envelope"></i> emergency@coinance.co
+                    </a>
+                </div>
+            </div>
+
+            <div class="support-channels">
+                <!-- Email Support -->
+                <div class="support-channel">
+                    <div class="channel-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="channel-title">Email Support</h3>
+                    <p class="channel-description">Get detailed assistance via email. Perfect for complex issues that require documentation or step-by-step guidance.</p>
+                    <div class="channel-details">
+                        <strong>Email:</strong> support@coinance.co<br>
+                        <strong>Response Time:</strong> Within 4 hours<br>
+                        <strong>Availability:</strong> 24/7
+                    </div>
+                    <a href="mailto:support@coinance.co" class="btn btn-primary">Send Email</a>
+                </div>
+
+                <!-- Phone Support -->
+                <div class="support-channel">
+                    <div class="channel-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="channel-title">Phone Support</h3>
+                    <p class="channel-description">Speak directly with our support specialists for immediate assistance and real-time problem solving.</p>
+                    <div class="channel-details">
+                        <strong>Phone:</strong> +1 (555) 123-4567<br>
+                        <strong>Hours:</strong> 24/7/365<br>
+                        <strong>Languages:</strong> English, Spanish, French
+                    </div>
+                    <a href="tel:+15551234567" class="btn btn-primary">Call Now</a>
+                </div>
+
+                <!-- Live Chat -->
+                <div class="support-channel">
+                    <div class="channel-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="channel-title">Live Chat</h3>
+                    <p class="channel-description">Get instant help through our live chat system. Quick responses for immediate questions and support.</p>
+                    <div class="channel-details">
+                        <strong>Availability:</strong> 24/7<br>
+                        <strong>Average Response:</strong> Under 2 minutes<br>
+                        <strong>Languages:</strong> Multi-lingual support
+                    </div>
+                    <button class="btn btn-primary" onclick="openLiveChat()">Start Chat</button>
+                </div>
+
+                <!-- Account Management -->
+                <div class="support-channel">
+                    <div class="channel-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="channel-title">Account Manager</h3>
+                    <p class="channel-description">Connect with your dedicated account manager for strategic discussions and service optimization.</p>
+                    <div class="channel-details">
+                        <strong>Contact:</strong> Via email or phone<br>
+                        <strong>Availability:</strong> Business hours<br>
+                        <strong>Response:</strong> Same day
+                    </div>
+                    <a href="mailto:accounts@coinance.co" class="btn btn-primary">Contact Manager</a>
+                </div>
+
+                <!-- Technical Support -->
+                <div class="support-channel">
+                    <div class="channel-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="channel-title">Technical Support</h3>
+                    <p class="channel-description">Specialized technical assistance for integrations, API issues, and system configurations.</p>
+                    <div class="channel-details">
+                        <strong>Email:</strong> tech@coinance.co<br>
+                        <strong>Expertise:</strong> API, Integrations, Systems<br>
+                        <strong>Response:</strong> Within 2 hours
+                    </div>
+                    <a href="mailto:tech@coinance.co" class="btn btn-primary">Get Technical Help</a>
+                </div>
+
+                <!-- Billing Support -->
+                <div class="support-channel">
+                    <div class="channel-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3 class="channel-title">Billing Support</h3>
+                    <p class="channel-description">Questions about invoices, payments, or account billing? Our billing team is here to help.</p>
+                    <div class="channel-details">
+                        <strong>Email:</strong> billing@coinance.co<br>
+                        <strong>Phone:</strong> +1 (555) 123-4568<br>
+                        <strong>Hours:</strong> Mon-Fri, 9 AM - 6 PM EST
+                    </div>
+                    <a href="mailto:billing@coinance.co" class="btn btn-primary">Billing Inquiry</a>
+                </div>
+            </div>
+
+            <div class="resources-section">
+                <h2 style="color: #0066cc; margin-bottom: 15px;">Self-Service Resources</h2>
+                <p>Find answers and resources to help you get the most out of our services.</p>
+                
+                <div class="resources-grid">
+                    <a href="faq.html" class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div>
+                            <strong>FAQ</strong><br>
+                            <small>Frequently asked questions</small>
+                        </div>
+                    </a>
+
+                    <a href="#" class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div>
+                            <strong>Knowledge Base</strong><br>
+                            <small>Comprehensive guides and tutorials</small>
+                        </div>
+                    </a>
+
+                    <a href="#" class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div>
+                            <strong>Video Tutorials</strong><br>
+                            <small>Step-by-step video guides</small>
+                        </div>
+                    </a>
+
+                    <a href="#" class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div>
+                            <strong>Downloads</strong><br>
+                            <small>Forms, templates, and resources</small>
+                        </div>
+                    </a>
+
+                    <a href="#" class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div>
+                            <strong>API Documentation</strong><br>
+                            <small>Developer resources and guides</small>
+                        </div>
+                    </a>
+
+                    <a href="#" class="resource-item">
+                        <div class="resource-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div>
+                            <strong>Training Schedule</strong><br>
+                            <small>Upcoming webinars and training</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="system-status">
+                <h2 style="color: #0066cc; margin-bottom: 15px;">System Status</h2>
+                <p>Real-time status of our services and systems.</p>
+                
+                <div class="status-grid">
+                    <div class="status-item">
+                        <span>Call Center Operations</span>
+                        <span class="status-indicator"></span>
+                    </div>
+                    <div class="status-item">
+                        <span>Live Chat System</span>
+                        <span class="status-indicator"></span>
+                    </div>
+                    <div class="status-item">
+                        <span>Customer Portal</span>
+                        <span class="status-indicator"></span>
+                    </div>
+                    <div class="status-item">
+                        <span>API Services</span>
+                        <span class="status-indicator"></span>
+                    </div>
+                    <div class="status-item">
+                        <span>Reporting Systems</span>
+                        <span class="status-indicator"></span>
+                    </div>
+                    <div class="status-item">
+                        <span>Phone Systems</span>
+                        <span class="status-indicator"></span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="#" class="btn btn-secondary">View Detailed Status</a>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 15px; padding: 40px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                <h2 style="color: #0066cc; margin-bottom: 20px;">Need More Help?</h2>
+                <p style="margin-bottom: 30px; color: #666;">Our support team is always ready to assist you. Choose the method that works best for you:</p>
+                
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="mailto:support@coinance.co" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Email Support
+                    </a>
+                    <a href="tel:+15551234567" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Support
+                    </a>
+                    <button class="btn btn-secondary" onclick="openLiveChat()">
+                        <i class="fas fa-comments"></i> Start Live Chat
+                    </button>
+                </div>
+
+                <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid #eee;">
+                    <h3 style="color: #0066cc; margin-bottom: 15px;">Support Hours</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: left;">
+                        <div>
+                            <strong>Phone Support:</strong><br>
+                            24/7/365 availability
+                        </div>
+                        <div>
+                            <strong>Email Support:</strong><br>
+                            24/7 (4-hour response)
+                        </div>
+                        <div>
+                            <strong>Live Chat:</strong><br>
+                            24/7 (2-minute response)
+                        </div>
+                        <div>
+                            <strong>Account Management:</strong><br>
+                            Mon-Fri, 8 AM - 8 PM EST
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div style="text-align: center; padding: 20px 0;">
+                <p>&copy; 2024 Coinance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openLiveChat() {
+            // In a real implementation, this would open your live chat widget
+            alert('Live chat feature would open here. Integration with your preferred live chat service (Intercom, Zendesk Chat, etc.) would be implemented.');
+        }
+
+        // Simulate real-time status updates
+        function updateSystemStatus() {
+            const indicators = document.querySelectorAll('.status-indicator');
+            indicators.forEach(indicator => {
+                // 95% chance of green status
+                const isHealthy = Math.random() > 0.05;
+                indicator.className = isHealthy ? 'status-indicator' : 'status-indicator warning';
+            });
+        }
+
+        // Update status every 30 seconds
+        setInterval(updateSystemStatus, 30000);
+
+        // Add click tracking for support channels
+        document.querySelectorAll('.support-channel .btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const channelType = this.closest('.support-channel').querySelector('.channel-title').textContent;
+                console.log('Support channel used:', channelType);
+                
+                // In a real implementation, you would track this with your analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'support_channel_used', {
+                        channel_type: channelType,
+                        action: this.textContent.trim()
+                    });
+                }
+            });
+        });
+
+        // Emergency notification system
+        function showEmergencyNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 80px;
+                right: 20px;
+                background: #dc3545;
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                z-index: 10000;
+                max-width: 300px;
+            `;
+            notification.innerHTML = `
+                <strong>Service Alert</strong><br>
+                ${message}
+                <button onclick="this.parentElement.remove()" style="float: right; background: none; border: none; color: white; font-size: 18px; cursor: pointer;">&times;</button>
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 10000);
+        }
+
+        // Example emergency notification (you would trigger this based on actual system status)
+        // showEmergencyNotification('Scheduled maintenance window: Jan 15, 2-4 AM EST');
+    </script>
+</body>
+</html> 
